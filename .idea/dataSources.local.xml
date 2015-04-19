@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails ent8: development" uuid="21006c4f-d70d-418b-82df-44438bbcbb33">
+      <user-name>shibabu</user-name>
+      <schema-pattern>ent8_development.pg_catalog ent8_development.public</schema-pattern>
+      <default-schemas>ent8_development.pg_catalog ent8_development.public</default-schemas>
+    </data-source>
+    <data-source name="Rails ent8: test" uuid="60695710-8efd-4ffd-ba2f-40c80469a19f">
+      <schema-pattern>ent8_test.*</schema-pattern>
+      <default-schemas>ent8_test.*</default-schemas>
+    </data-source>
+  </component>
+</project>

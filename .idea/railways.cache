@@ -1,0 +1,16 @@
+          Prefix Verb   URI Pattern                  Controller#Action
+   welcome_index GET    /welcome/index(.:format)     welcome#index
+   welcome_about GET    /welcome/about(.:format)     welcome#about
+ welcome_contact GET    /welcome/contact(.:format)   welcome#contact
+     welcome_faq GET    /welcome/faq(.:format)       welcome#faq
+ welcome_pricing GET    /welcome/pricing(.:format)   welcome#pricing
+welcome_features GET    /welcome/features(.:format)  welcome#features
+        invoices GET    /invoices(.:format)          invoices#index
+                 POST   /invoices(.:format)          invoices#create
+     new_invoice GET    /invoices/new(.:format)      invoices#new
+    edit_invoice GET    /invoices/:id/edit(.:format) invoices#edit
+         invoice GET    /invoices/:id(.:format)      invoices#show
+                 PATCH  /invoices/:id(.:format)      invoices#update
+                 PUT    /invoices/:id(.:format)      invoices#update
+                 DELETE /invoices/:id(.:format)      invoices#destroy
+            root GET    /                            invoices#index

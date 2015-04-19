@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2515250824">
+    <data-source source="LOCAL" name="Rails ent8: development" uuid="21006c4f-d70d-418b-82df-44438bbcbb33">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ent8_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ent8: test" uuid="60695710-8efd-4ffd-ba2f-40c80469a19f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ent8_test</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
