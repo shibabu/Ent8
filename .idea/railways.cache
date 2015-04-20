@@ -1,16 +1,34 @@
-          Prefix Verb   URI Pattern                  Controller#Action
-   welcome_index GET    /welcome/index(.:format)     welcome#index
-   welcome_about GET    /welcome/about(.:format)     welcome#about
- welcome_contact GET    /welcome/contact(.:format)   welcome#contact
-     welcome_faq GET    /welcome/faq(.:format)       welcome#faq
- welcome_pricing GET    /welcome/pricing(.:format)   welcome#pricing
-welcome_features GET    /welcome/features(.:format)  welcome#features
-        invoices GET    /invoices(.:format)          invoices#index
-                 POST   /invoices(.:format)          invoices#create
-     new_invoice GET    /invoices/new(.:format)      invoices#new
-    edit_invoice GET    /invoices/:id/edit(.:format) invoices#edit
-         invoice GET    /invoices/:id(.:format)      invoices#show
-                 PATCH  /invoices/:id(.:format)      invoices#update
-                 PUT    /invoices/:id(.:format)      invoices#update
-                 DELETE /invoices/:id(.:format)      invoices#destroy
-            root GET    /                            invoices#index
+                  Prefix Verb   URI Pattern                       Controller#Action
+        new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
+            user_session POST   /users/sign_in(.:format)          devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)         devise/sessions#destroy
+           user_password POST   /users/password(.:format)         devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)     devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)    devise/passwords#edit
+                         PATCH  /users/password(.:format)         devise/passwords#update
+                         PUT    /users/password(.:format)         devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)           devise/registrations#cancel
+       user_registration POST   /users(.:format)                  devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)          devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)             devise/registrations#edit
+                         PATCH  /users(.:format)                  devise/registrations#update
+                         PUT    /users(.:format)                  devise/registrations#update
+                         DELETE /users(.:format)                  devise/registrations#destroy
+       user_confirmation POST   /users/confirmation(.:format)     devise/confirmations#create
+   new_user_confirmation GET    /users/confirmation/new(.:format) devise/confirmations#new
+                         GET    /users/confirmation(.:format)     devise/confirmations#show
+                    root GET    /                                 welcome#index
+           welcome_index GET    /welcome/index(.:format)          welcome#index
+           welcome_about GET    /welcome/about(.:format)          welcome#about
+         welcome_contact GET    /welcome/contact(.:format)        welcome#contact
+             welcome_faq GET    /welcome/faq(.:format)            welcome#faq
+         welcome_pricing GET    /welcome/pricing(.:format)        welcome#pricing
+        welcome_features GET    /welcome/features(.:format)       welcome#features
+                invoices GET    /invoices(.:format)               invoices#index
+                         POST   /invoices(.:format)               invoices#create
+             new_invoice GET    /invoices/new(.:format)           invoices#new
+            edit_invoice GET    /invoices/:id/edit(.:format)      invoices#edit
+                 invoice GET    /invoices/:id(.:format)           invoices#show
+                         PATCH  /invoices/:id(.:format)           invoices#update
+                         PUT    /invoices/:id(.:format)           invoices#update
+                         DELETE /invoices/:id(.:format)           invoices#destroy
