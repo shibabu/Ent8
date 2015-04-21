@@ -5,6 +5,14 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.all
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        response.headers['Content-Disposition'] = 'attachment'
+        render text: @companies.to_csv
+      end
+    end
   end
 
   # GET /companies/1
@@ -66,7 +74,7 @@ class CompaniesController < ApplicationController
     if params[:file]
       Company.import params[:file]
 
-      redirect_to companies_path, notice: 'Companies were successfully added.'
+      redirect_to companies_path, notice: 'Companies were successfully uploaded.'
     else
       redirect_to companies_path, notice: 'No file specified for upload'
     end
