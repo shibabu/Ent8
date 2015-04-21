@@ -11,4 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
-.idea/
+**/.idea/workspace.xml
+**/.idea/vcs.xml
+**/.idea/mongoSettings.xml
+**/.idea/dataSources.xml
+**/.idea/dataSources.ids
+**/.idea/ent8.iml
