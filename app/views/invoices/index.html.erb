@@ -19,6 +19,7 @@
         <th>Company</th>
         <th>Tax</th>
         <th>Salesperson</th>
+        <th>Status</th>
         <th colspan="3"></th>
       </tr>
       </thead>
@@ -30,6 +31,7 @@
             <td><%= invoice.company %></td>
             <td><%= invoice.tax %></td>
             <td><%= invoice.salesperson %></td>
+            <td><%= invoice.status_type %></td>
             <td><%= link_to 'Show', invoice, class: 'btn btn-xs btn-default' %></td>
             <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'btn btn-xs btn-success' %></td>
             <td><%= link_to 'Destroy', invoice, method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>

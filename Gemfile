@@ -34,7 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Project gems
 gem 'bootstrap-sass'
-gem 'bootstrap-will_paginate'
 gem 'devise'
 
 group :development, :test do
