@@ -25,11 +25,11 @@
         <%= f.text_field :tax, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :salesperson %><br>
-        <%= f.text_field :salesperson, class: 'form-control' %>
+        <%= f.label :employee_id %><br>
+        <%= collection_select :invoice, :employee_id, Employee.all, :id, :name, {}, {multiple: false} %>
       </div>
       <div class="form-group">
-        <%= f.label 'Status' %>
+        <%= f.label 'Status' %><br>
         <%= f.select :status_type, options={PAID: 'PAID', PENDING: 'PENDING'} %>
       </div>
       <div class="actions form-group">
