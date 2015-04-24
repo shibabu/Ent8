@@ -27,17 +27,23 @@
           <th>Name</th>
           <th>Category</th>
           <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
           <th>Delete</th>
         </tr>
       </thead>
       <tbody>
+        <% running_total=0 %>
         <% @purchases.each do |purchase| %>
         <tr>
           <td><h4><%= purchase.name %></h4></td>
           <td><h4><%= purchase.category %></h4></td>
           <td><h4><%= purchase.quantity %></h4></td>
+          <td><h4><%= number_to_currency purchase.price %></h4></td>
+          <td><h4><%= number_to_currency purchase.price*purchase.quantity %></h4></td>
           <td><h4><%= link_to 'Delete', [@invoice, purchase], method: :delete, data: {confirm: 'Are you sure?'} %></h4></td>
         </tr>
+        <% running_total+=purchase.price*purchase.quantity %>
         <% end %>
       </tbody>
     </table>
@@ -53,3 +59,7 @@
 <%= link_to 'Back', invoices_path %>
 
 <%= link_to 'Add new item', new_invoice_purchase_path(@invoice), class: 'pull-right' %>
+
+<br>
+
+<h4 class="pull-right">Invoice Total: <%= number_to_currency running_total %></h4>
