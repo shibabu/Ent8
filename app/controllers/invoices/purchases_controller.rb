@@ -1,5 +1,4 @@
-class PurchasesController < ApplicationController
-  before_action :set_purchase, only: [:show, :edit, :update, :destroy]
+class Invoices::PurchasesController < ApplicationController
 
   # GET /purchases
   # GET /purchases.json
@@ -14,7 +13,8 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/new
   def new
-    @purchase = Purchase.new
+    @invoice=Invoice.find(params[:invoice_id])
+    @purchase=Purchase.new
   end
 
   # GET /purchases/1/edit
@@ -24,15 +24,17 @@ class PurchasesController < ApplicationController
   # POST /purchases
   # POST /purchases.json
   def create
+    @invoice = Invoice.find(params[:invoice_id])
     @purchase = Purchase.new(purchase_params)
+    @purchase.invoice=@invoice
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
-        format.json { render :show, status: :created, location: @purchase }
+        format.html { redirect_to @invoice, notice: 'Purchase was successfully created.' }
+        format.json { render :show, status: :created, location: @invoice }
       else
         format.html { render :new }
-        format.json { render json: @purchase.errors, status: :unprocessable_entity }
+        format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,10 +56,16 @@ class PurchasesController < ApplicationController
   # DELETE /purchases/1
   # DELETE /purchases/1.json
   def destroy
-    @purchase.destroy
-    respond_to do |format|
-      format.html { redirect_to purchases_url, notice: 'Purchase was successfully destroyed.' }
-      format.json { head :no_content }
+    @invoice=Invoice.find(params[:invoice_id])
+    @purchase=Purchase.find(params[:id])
+    title=@purchase.name
+
+    if @purchase.destroy
+      flash[:notice]="'#{title}' was successfully deleted.."
+
+      redirect_to @invoice
+    else
+      flash[:error]='There was an error deleting the purchase'
     end
   end
 

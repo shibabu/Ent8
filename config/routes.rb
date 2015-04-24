@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :purchases
-
   resources :employees
 
   resources :companies do
@@ -27,7 +25,9 @@ Rails.application.routes.draw do
   get 'welcome/features'
 
   # Invoice Resourceful/RESTful routes
-  resources :invoices
+  resources :invoices do
+    resources :purchases, except: [:index], controller: 'invoices/purchases'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
