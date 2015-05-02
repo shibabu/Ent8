@@ -1,7 +1,1 @@
-Ent8
-====
-
-RoR Test Project 2
-------------------
-
-#### Using automations `'scaffolding, etc.'`
+A basic Invoices and Customers Model in Ruby on Rails
